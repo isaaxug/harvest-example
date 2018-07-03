@@ -11,5 +11,5 @@ def get_temp():
 if __name__ == '__main__':
     while True:
         data = { 'temperature': get_temp() } 
-        print(data)
+        print(json.dumps(data))
         time.sleep(60)
