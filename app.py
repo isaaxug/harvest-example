@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-import requests
+import json
 import random
 import time
-import sys
 
 
 def get_temp():
@@ -11,11 +10,6 @@ def get_temp():
 
 if __name__ == '__main__':
     while True:
-        try:
-            requests.post("http://localhost:8880/deliver",
-			      params={"soracom": "harvest"},
-			      json={"temperature": get_temp()})
-        except:
-            print(sys.exc_info())
-
+        data = { 'temperature': get_temp() } 
+        print(data)
         time.sleep(60)
